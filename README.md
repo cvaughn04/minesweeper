@@ -61,3 +61,61 @@ cd minesweeper/build
 cmake -G "Ninja" ..
 cmake --build .
 ```
+
+***Example for cmake and ninja in Windows (MSYS2 / MinGW-w64):***
+
+```
+git clone https://github.com/q-g-j/minesweeper.git
+cd minesweeper
+mkdir build
+cd build
+cmake -G "Ninja" ..
+cmake --build .
+```
+
+## Unit Tests:
+
+Tests use the [GoogleTest](https://github.com/google/googletest) framework and are built automatically when GTest is detected by CMake.
+
+### Test dependencies
+
+GoogleTest is fetched and compiled from source automatically by CMake via `FetchContent` — no separate install is required. An internet connection is needed the first time CMake configures the project.
+
+### Building and running the tests
+
+Configure with `Debug` type to keep symbols in the test binary:
+
+```
+mkdir -p build && cd build
+cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Debug ..
+cmake --build .
+ctest --output-on-failure
+```
+
+To skip building tests entirely, pass `-DBUILD_TESTS=OFF` at configure time:
+
+```
+cmake -G "Ninja" -DBUILD_TESTS=OFF ..
+```
+
+To run the test executable directly (shows per-test pass/fail detail):
+
+**Linux:**
+```
+./minesweeper_tests
+```
+
+**Windows:**
+```
+.\minesweeper_tests.exe
+```
+
+### Test coverage
+
+| Test suite | Functions under test |
+|---|---|
+| `CoordsToInt` | `Common::coordsToInt` — row 1 and subsequent rows |
+| `IntToCoords` | `Common::intToCoords` — first row, end-of-row, mid-row |
+| `CoordsRoundtrip` | Round-trip integrity across an 8×5 grid |
+| `SecondsToTimeStruct` | `Common::secondsToTimeStruct` — zero-padding, minute boundaries |
+| `CoordsToCursorPosition` | `Common::coordsToCursorPosition` — offset and cell-width arithmetic |
