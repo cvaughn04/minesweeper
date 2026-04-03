@@ -9,6 +9,7 @@
 #   2026-03-31  Add test_field_is_flag.cpp               C. Vaughn
 #   2026-04-03  Add test_input_move_cursor.cpp           C. Vaughn
 #   2026-04-03  Add test_input_get_difficulty.cpp        C. Vaughn
+#   2026-04-03  Add more Field test files                N. Schweikhart
 # =============================================================================
 
 include(GoogleTest)
@@ -19,6 +20,10 @@ add_executable(minesweeper_tests
     test_field_is_flag.cpp
     test_input_move_cursor.cpp
     test_input_get_difficulty.cpp
+    test_field_is_number.cpp
+    test_field_game_lost.cpp
+    test_field_fill_mines.cpp
+    test_field_create_2D_Vector.cpp
 )
 
 target_link_libraries(minesweeper_tests
