@@ -10,12 +10,20 @@
 #   2026-04-03  Add test_input_move_cursor.cpp           C. Vaughn
 #   2026-04-03  Add test_input_get_difficulty.cpp        C. Vaughn
 #   2026-04-03  Add more Field test files                N. Schweikhart
+#   2026-04-04  Add test_common_seconds_to_time_struct   R. Vaughn
+#   2026-04-04  Add test_common_int_to_coords            R. Vaughn
+#   2026-04-04  Add test_common_coords_to_int            R. Vaughn
+#   2026-04-04  Add test_common_coords_to_cursor_pos     R. Vaughn
 # =============================================================================
 
 include(GoogleTest)
 
 add_executable(minesweeper_tests
     test_common.cpp
+    test_common_seconds_to_time_struct.cpp
+    test_common_int_to_coords.cpp
+    test_common_coords_to_int.cpp
+    test_common_coords_to_cursor_position.cpp
     test_field_find_neighbors.cpp
     test_field_is_flag.cpp
     test_input_move_cursor.cpp
