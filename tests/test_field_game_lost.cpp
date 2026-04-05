@@ -16,25 +16,22 @@
  */
 
 #include <gtest/gtest.h>
-#include <common.h>
-#include <field.h>
-#include <symbols.h>
 #include <thread>
 #include <chrono>
+#ifdef _WIN32
+#include <io.h>
+#include <fcntl.h>
+#define pipe(fds)   _pipe(fds, 256, O_BINARY)
+#define dup2        _dup2
+#define write       _write
+#define close       _close
+#ifndef STDIN_FILENO
+#define STDIN_FILENO 0
+#endif
+#else
 #include <unistd.h>
-
-Common::GameModeReturnStruct makegameMode(int cols, int rows, int mines)
-{
-    Common::GameModeReturnStruct gm;
-    gm.cols             = cols;
-    gm.rows             = rows;
-    gm.mines            = mines;
-    gm.offsetX          = 4;
-    gm.offsetY          = 4;
-    gm.cellWidth        = 3;
-    gm.difficultyString = "test";
-    return gm;
-}
+#endif
+#include "test_helpers.h"
 
 // Helper: redirects stdin to a pipe and writes a newline to simulate Enter
 void simulateEnter(int delayMs = 200)
