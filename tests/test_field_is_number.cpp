@@ -25,8 +25,8 @@
 // B1 - numbered cell: 2x2 grid with 3 mines guarantees the clicked cell
 // is always surrounded by mines and becomes a number
 TEST(IsNumberTest, ReturnsTrue_ForNumberedCell) {
-    // arrange: 2x2 grid, 3 mines — only 1 safe cell
-    auto gm = makegameMode(2, 2, 3);
+    // arrange: 2x2 grid, 1 mine
+    auto gm = makegameMode(2, 2, 1);
     Field field(gm);
     Common::UserInputReturnStruct userInput;
     userInput.coords  = {1, 1};

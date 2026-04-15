@@ -34,6 +34,9 @@ add_executable(minesweeper_tests
     test_field_create_2D_Vector.cpp
 )
 
+target_compile_definitions(minesweeper_lib  PRIVATE TESTING=1)
+target_compile_definitions(minesweeper_tests PRIVATE TESTING=1)
+
 target_link_libraries(minesweeper_tests
     PRIVATE
         minesweeper_lib
