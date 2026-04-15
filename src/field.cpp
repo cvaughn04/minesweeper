@@ -618,7 +618,9 @@ void Field::gameWon()
 
     Print::printHasWon(*this);
     Common::gotoXY(this->fieldOffsetX - 1, this->fieldOffsetY + this->rows*2 + 3);
+    #ifndef TESTING
     input.getInputEnterKey("Press ENTER to get back...");
+    #endif
 }
 
 void Field::gameLost()
@@ -659,7 +661,9 @@ void Field::gameLost()
 
     Print::printHasLost(*this);
     Common::gotoXY(this->fieldOffsetX - 1, this->fieldOffsetY + this->rows*2 + 3);
+    #ifndef TESTING
     input.getInputEnterKey("Press ENTER to get back...");
+    #endif
 }
 
 // automatically reveal all connected cells, as long as they have no neighbor mines:
