@@ -1,0 +1,3 @@
+minesweeper\runner\CucumberRunnerTest.class
+minesweeper\stepdefinitions\BoardSizeSteps.class
+minesweeper\stepdefinitions\HelpPageSteps.class
