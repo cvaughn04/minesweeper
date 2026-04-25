@@ -20,7 +20,7 @@
 #include <field.h>
 #include <symbols.h>
 
-#include "test_helpers.h"
+#include "../test_helpers.h"
 
 // B1 - numbered cell: 2x2 grid with 3 mines guarantees the clicked cell
 // is always surrounded by mines and becomes a number

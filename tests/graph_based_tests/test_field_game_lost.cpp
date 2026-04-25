@@ -31,7 +31,7 @@
 #else
 #include <unistd.h>
 #endif
-#include "test_helpers.h"
+#include "../test_helpers.h"
 
 // Helper: redirects stdin to a pipe and writes a newline to simulate Enter
 void simulateEnter(int delayMs = 200)

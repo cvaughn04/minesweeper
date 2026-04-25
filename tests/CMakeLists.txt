@@ -20,18 +20,18 @@ include(GoogleTest)
 
 add_executable(minesweeper_tests
     test_common.cpp
-    test_common_seconds_to_time_struct.cpp
-    test_common_int_to_coords.cpp
-    test_common_coords_to_int.cpp
-    test_common_coords_to_cursor_position.cpp
-    test_field_find_neighbors.cpp
-    test_field_is_flag.cpp
-    test_input_move_cursor.cpp
-    test_input_get_difficulty.cpp
-    test_field_is_number.cpp
-    test_field_game_lost.cpp
-    test_field_fill_mines.cpp
-    test_field_create_2D_Vector.cpp
+    graph_based_tests/test_common_coords_to_cursor_position.cpp
+    graph_based_tests/test_common_coords_to_int.cpp
+    graph_based_tests/test_field_create_2D_Vector.cpp
+    graph_based_tests/test_field_game_lost.cpp
+    graph_based_tests/test_input_get_difficulty.cpp
+    graph_based_tests/test_input_move_cursor.cpp
+    input_domain_modeling_tests/test_common_int_to_coords.cpp
+    input_domain_modeling_tests/test_common_seconds_to_time_struct.cpp
+    input_domain_modeling_tests/test_field_fill_mines.cpp
+    input_domain_modeling_tests/test_field_find_neighbors.cpp
+    input_domain_modeling_tests/test_field_is_flag.cpp
+    input_domain_modeling_tests/test_field_is_number.cpp
 )
 
 target_compile_definitions(minesweeper_lib  PRIVATE TESTING=1)

@@ -20,7 +20,7 @@
 #include <field.h>
 #include <symbols.h>
 
-#include "test_helpers.h"
+#include "../test_helpers.h"
 
 // B1 - corner cell as first input → must not be a mine
 TEST(FillMinesTest, FirstClick_CornerCell_IsNotMine) {

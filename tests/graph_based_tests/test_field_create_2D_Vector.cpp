@@ -21,7 +21,7 @@
 #include <field.h>
 #include <symbols.h>
 
-#include "test_helpers.h"
+#include "../test_helpers.h"
 
 // P1 - "field" branch: after construction every cell should be symbolCovered
 TEST(Create2DVectorTest, FieldType_AllCellsCovered) {
